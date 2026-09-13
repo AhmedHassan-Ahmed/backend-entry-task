@@ -98,6 +98,8 @@ class Store {
     };
   }
 
+
+  
   async importFromApi(userId: number) {
     try {
       const response = await fetch(
@@ -112,7 +114,7 @@ class Store {
         title: string;
         completed: boolean;
       }[] = await response.json();
-      
+
       data.forEach((item) => {
         const task = this.add(item.title, 1, item.userId);
         if (item.completed) {
