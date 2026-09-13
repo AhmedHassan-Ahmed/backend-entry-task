@@ -33,20 +33,46 @@ class Store {
   }
 
   findById(id: number) {
-   const task= Store.tasks.find((value) => value.id == id);
-   if(!task){
-    return undefined;
-   }
-   return task
+    const task = Store.tasks.find((value) => value.id == id);
+    if (!task) {
+      return undefined;
+    }
+    return task;
   }
 
-  update(id:number, changes:Task) {
+  update(id: number, changes: Partial<Task>) {
+    var task = this.findById(id);
+    if (!task) {
+      return undefined;
+    }
+    const updatedTask: Task = {
+      id: id,
+      title: changes.title || task.title,
+      status: "todo",
+      priority: changes.priority || task.priority,
+      ownerId: changes.ownerId || task.ownerId,
+    };
 
+    task = updatedTask;
+
+    return updatedTask;
   }
+
+  remove(id: number) {
+    const task = Store.tasks.find((value) => value.id == id);
+    Store.tasks = Store.tasks.filter((task) => task.id != id);
+  }
+  
 }
 const store = new Store();
 
 console.log(store.add("Practice Node.js", 3, 2));
 console.log(store.add("Practice Node.js", 3, 2));
 console.log(store.findById(2));
-
+console.log(
+  store.update(2, {
+    title: "Practice js",
+    status: "todo",
+    priority: 2,
+  }),
+);
