@@ -98,8 +98,6 @@ class Store {
     };
   }
 
-
-  
   async importFromApi(userId: number) {
     try {
       const response = await fetch(
@@ -126,18 +124,19 @@ class Store {
     }
   }
 }
+
 const store = new Store();
 
-console.log(store.add("Practice Node.js", 3, 2));
-console.log(store.add("Practice TypeScript", 2, 1));
-console.log(store.add("Build Task Manager", 3, 2));
-console.log(store.add("Read documentation", 1, 3));
+console.log(store.add("Write the report1", 3, 2));
+console.log(store.add("Write the report2", 2, 1));
+console.log(store.add("Write the report3", 3, 2));
+console.log(store.add("Write the report4", 1, 3));
 console.log(store.add("Test API", 2, 3));
 
 console.log(" Update ");
 console.log(
   store.update(2, {
-    title: "Practice TypeScript Advanced",
+    title: "Write the report edited",
     status: "doing",
   }),
 );
