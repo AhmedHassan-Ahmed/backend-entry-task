@@ -54,6 +54,7 @@ Then it waits for:
 await response.json()
 ```
 
+
 to finish reading and converting the response body into JavaScript data.
 
 This allows the API data to be available before the tasks are added to the store.
