@@ -1,8 +1,6 @@
 # Task Manager
 
-## Author
-
-**Name:** [Your Full Name]
+**Name:** [Ahmed Hassan Ahmed]
 
 ## Description
 
@@ -18,13 +16,12 @@ It supports:
 * Counting tasks by status
 * Importing tasks from JSONPlaceholder API
 
-
 ## How to Run
 
 Compile the TypeScript file:
 
 ```bash
-tsc taskStore.ts
+tsc taskStore.ts --target ES2017
 ```
 
 Then run the generated JavaScript file:
@@ -63,9 +60,7 @@ This allows the API data to be available before the tasks are added to the store
 
 ### 2. Why must `list()` not return the internal array directly?
 
-`list()` should not return `Store.tasks` directly because external code could modify the internal array as it will pass by reference.
-
- so
+`list()` should not return `Store.tasks` directly because external code could modify the internal array since arrays are passed by reference.
 
 Instead, `list()` creates a copy using:
 
@@ -90,4 +85,3 @@ Another part that required attention was the API import, especially converting t
 ## Unfinished / Notes
 
 The required functionality is implemented.
-
