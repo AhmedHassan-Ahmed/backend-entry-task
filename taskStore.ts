@@ -33,7 +33,7 @@ class Store {
   }
 
   findById(id: number) {
-    const task = Store.tasks.find((value) => value.id == id);
+    const task = Store.tasks.find((value) => value.id === id);
     if (!task) {
       return undefined;
     }
@@ -103,6 +103,7 @@ class Store {
       const response = await fetch(
         `https://jsonplaceholder.typicode.com/todos?userId=${userId}`,
       );
+
       if (!response.ok) {
         throw new Error(`Request failed: ${response.status}`);
       }
