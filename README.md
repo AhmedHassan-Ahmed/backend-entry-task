@@ -41,7 +41,7 @@ The demo at the bottom of the file shows adding, updating, removing, finding, fi
 
 `await` makes the function wait for the asynchronous operation to finish before continuing.
 
-In this case, the code waits for:
+In this case in our code, the code waits for:
 
 ```ts
 await fetch(...)
@@ -58,7 +58,7 @@ await response.json()
 
 to finish reading and converting the response body into JavaScript data.
 
-This allows the API data to be available before the tasks are added to the store.
+This allows the API data to be getted before the tasks are added to the store.
 
 ### 2. Why must `list()` not return the internal array directly?
 
@@ -86,4 +86,4 @@ Another part that required attention was the API import, especially converting t
 
 ## Unfinished / Notes
 
-The required functionality is implemented.
+All the required functionality is implemented.
